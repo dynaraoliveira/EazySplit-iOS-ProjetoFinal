@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1007881946799-8q3plhuujl2kta67e06684bvldfj9r24.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1007881946799-8q3plhuujl2kta67e06684bvldfj9r24</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1007881946799-dfitfcnlc5qe8oakpd6b59f8buirr3lh.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAufINP2dQuTiSGrUafgayCL3YR_D5CwK8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1007881946799</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.eazysplit.EazySplit</string>
+	<key>PROJECT_ID</key>
+	<string>eazysplit-fiap</string>
+	<key>STORAGE_BUCKET</key>
+	<string>eazysplit-fiap.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1007881946799:ios:8f90a69e396e747d</string>
+	<key>DATABASE_URL</key>
+	<string>https://eazysplit-fiap.firebaseio.com</string>
+</dict>
+</plist>
