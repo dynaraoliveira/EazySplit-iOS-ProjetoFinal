@@ -1,5 +1,5 @@
 //
-//  MeansOfPaymentTableViewController.swift
+//  CardsTableViewController.swift
 //  EazySplit
 //
 //  Created by Dynara Rico Oliveira on 02/05/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MeansOfPaymentTableViewController: UITableViewController {
+class CardsTableViewController: UITableViewController {
     
     private var cards: [Card] = []
     
@@ -20,8 +20,8 @@ class MeansOfPaymentTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = false
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func loadCards() {
@@ -54,7 +54,7 @@ class MeansOfPaymentTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let card = cards[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MeansOfPaymentTableViewCell") as? MeansOfPaymentTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell") as? CardTableViewCell else {
             return UITableViewCell()
         }
         
@@ -78,24 +78,28 @@ class MeansOfPaymentTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let card = cards[indexPath.row]
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyBoard
-            .instantiateViewController(withIdentifier:"AddMeansOfPaymentViewController") as? AddMeansOfPaymentViewController else { return }
-        vc.card = card
-        
-        pushViewController(vc)
+        addEditCards(cards[indexPath.row])
     }
     
 }
 
-extension MeansOfPaymentTableViewController {
+extension CardsTableViewController {
     private func loadNavigationBar() {
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addMeansOfPayment))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(actionAddCard))]
+    }
+    
+    private func addEditCards(_ card: Card? = nil) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyBoard
+            .instantiateViewController(withIdentifier: "AddEditCardsViewController") as? AddEditCardsViewController else { return }
+        
+        vc.card = card
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
-    private func addMeansOfPayment() {
-        goToViewController(withIdentifier: "AddMeansOfPaymentViewController")
+    private func actionAddCard() {
+        addEditCards()
     }
 }

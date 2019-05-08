@@ -44,14 +44,6 @@ extension UITextField {
         let validator = ValidatorFactory.validatorFor(type: validationType)
         return try validator.validated(self.text!)
     }
-    
-    func showMessage(_ text: String) {
-        layer.cornerRadius = 5.0
-        layer.masksToBounds = true
-        layer.borderColor = UIColor.red.cgColor
-        layer.borderWidth = 0.5
-        attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-    }
 }
 
 extension String {
@@ -80,23 +72,6 @@ extension String {
             replicateString += self
         }
         return replicateString
-    }
-}
-
-extension UIViewController {
-    func goToViewController(withIdentifier: String) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: withIdentifier) {
-            tabBarController?.tabBar.isHidden = true
-            pushViewController(vc)
-        }
-    }
-    
-    func pushViewController(_ vc: UIViewController) {
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func presentViewController(_ vc: UIViewController) {
-        self.present(vc, animated: true, completion: nil)
     }
 }
 

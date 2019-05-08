@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  EazySplit
 //
 //  Created by Dynara Rico Oliveira on 21/04/19.
@@ -14,14 +14,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var loginFacebookButton: UIButton!
-    @IBOutlet weak var loginGoogleButton: UIButton!
     
     var firebaseService: FirebaseService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButtons()
+        setButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,10 +31,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func setButtons() {
+    private func setButton() {
         loginButton.loadCornerRadius()
-        loginFacebookButton.loadCornerRadius()
-        loginGoogleButton.loadCornerRadius()
     }
     
     @IBAction func loginClick(_ sender: Any) {
@@ -57,7 +53,7 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Login", message: "Invalid login or password", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
-        presentViewController(alert)
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func goToHomeTabBar() {
@@ -65,7 +61,7 @@ class LoginViewController: UIViewController {
         guard let vc = storyBoard
             .instantiateViewController(withIdentifier:"HomeTabBar") as? UITabBarController else { return }
         
-        presentViewController(vc)
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

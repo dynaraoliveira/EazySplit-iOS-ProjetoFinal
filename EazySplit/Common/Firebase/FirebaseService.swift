@@ -85,49 +85,6 @@ class FirebaseService {
         completion()
     }
     
-    func listRestaurants(completion: @escaping((Result, [Restaurant]?) -> Void)) {
-        var restaurantList: [Restaurant] = []
-        
-        firestoreListener = firestore.collection(collectionRestaurants)
-            .order(by: "name", descending: false)
-            .addSnapshotListener(includeMetadataChanges: true){ (snapshot, error) in
-                if snapshot?.count == 0 {
-                    completion(.success, nil)
-                    return
-                }
-                
-                if let error = error {
-                    completion(.error(error), nil)
-                    return
-                }
-                
-                guard let snapshot = snapshot else { return }
-                
-                if snapshot.metadata.isFromCache || snapshot.documentChanges.count > 0 {
-                    restaurantList.removeAll()
-                    
-                    for document in snapshot.documents {
-                        let data = document.data()
-                        
-                        if let address = data["address"] as? String,
-                            let description = data["description"] as? String,
-                            let geolocation = data["geolocation"] as? GeoPoint,
-                            let name = data["name"] as? String,
-                            let rating = data["rating"] as? Int,
-                            let type = data["type"] as? String,
-                            let urlImage = data["url_image"] as? String
-                        {
-                            let restaurant = Restaurant(id: document.documentID, name: name, urlImage: urlImage, type: type, description: description, rating: rating, address: address, latitude: geolocation.latitude, longitude: geolocation.longitude)
-                            restaurantList.append(restaurant)
-                        }
-                    }
-                    
-                    completion(.success, restaurantList)
-                    return
-                }
-        }
-    }
-    
     func listCards(completion: @escaping((Result, [Card]?) -> Void)) {
         let uid = authFirebase.currentUser?.uid ?? ""
         var cards: [Card] = []
@@ -169,8 +126,6 @@ class FirebaseService {
                     return
                 }
         }
-        
-        
     }
     
     func deleteCard(id: String, completion: @escaping((Result) -> Void)) {
@@ -184,33 +139,6 @@ class FirebaseService {
             }
         }
         
-    }
-    
-    func getUser(completion: @escaping((Result, User?) -> Void)) {
-        let uid = authFirebase.currentUser?.uid ?? ""
-        let name = authFirebase.currentUser?.displayName ?? ""
-        let email = authFirebase.currentUser?.email ?? ""
-        let photoURL = authFirebase.currentUser?.photoURL?.absoluteString ?? ""
-        
-        firestore.collection(collectionUsers).document(uid).getDocument { (document, error) in
-            if let error = error {
-                completion(.error(error), nil)
-                return
-            }
-            
-            guard let data = document?.data() else {
-                let user = User(name: name, email: email, phoneNumber: "", birthDate: Date(), password: "", photoURL: photoURL, cards: nil)
-                completion(.success, user)
-                return
-            }
-            
-            if let phoneNumber = data["phoneNumber"] as? String,
-                let birthDate = data["birthDate"] as? Timestamp {
-                let user = User(name: name, email: email, phoneNumber: phoneNumber, birthDate: birthDate.dateValue(), password: "", photoURL: photoURL, cards: nil)
-                completion(.success, user)
-                return
-            }
-        }
     }
     
     private func savePhotoFireStorage(_ user: User, _ photoData: Data?, _ completion: @escaping(() -> Void)) {

@@ -1,5 +1,5 @@
 //
-//  MeansOfPaymentTableViewCell.swift
+//  CardTableViewCell.swift
 //  EazySplit
 //
 //  Created by Dynara Rico Oliveira on 02/05/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MeansOfPaymentTableViewCell: UITableViewCell {
+class CardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberView: UIView!
     @IBOutlet weak var numberLabel: UILabel!

@@ -37,27 +37,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Loader.shared.showOverlay(view: self.view)
-        if Auth.auth().currentUser != nil {
-            FirebaseService.shared.getUser { (result, user) in
-                Loader.shared.hideOverlayView()
-                switch result {
-                case .success:
-                    if let user = user {
-                        self.loadUserData(user)
-                        self.update = true
-                    }
-                case .error(let error):
-                    print(error.localizedDescription)
-                    break
-                }
-            }
-        } else {
-            registerImageView.image = UIImage(named: "foto")
-            Loader.shared.hideOverlayView()
-        }
-        
+        registerImageView.image = UIImage(named: "foto")
         cleanErrors()
         setDelegate()
         setRegisterImageView()
@@ -68,7 +48,6 @@ class RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     @IBAction func changePhotoClick(_ sender: Any) {

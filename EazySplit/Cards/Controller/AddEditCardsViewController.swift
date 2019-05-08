@@ -1,5 +1,5 @@
 //
-//  AddMeansOfPaymentViewController.swift
+//  AddEditCardsViewController.swift
 //  EazySplit
 //
 //  Created by Dynara Rico Oliveira on 02/05/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddMeansOfPaymentViewController: UIViewController {
+class AddEditCardsViewController: UIViewController {
 
     var card: Card?
     
@@ -43,7 +43,7 @@ class AddMeansOfPaymentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
@@ -116,7 +116,7 @@ class AddMeansOfPaymentViewController: UIViewController {
 }
 
 
-extension AddMeansOfPaymentViewController: UITextFieldDelegate {
+extension AddEditCardsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         cleanErrors()
     }
