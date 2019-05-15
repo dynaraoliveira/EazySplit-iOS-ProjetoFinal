@@ -11,24 +11,40 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
 
-    var restaurant: Restaurant?
+    var restaurants: [Restaurant]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func loadView() {
-        if let restaurant = restaurant {
-            let camera = GMSCameraPosition.camera(withLatitude: restaurant.latitude, longitude: restaurant.longitude, zoom: 16.0)
-            let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-            view = mapView
-            
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude)
-            marker.title = restaurant.name
-            marker.snippet = restaurant.address
-            marker.map = mapView
+
+        let mapView = GMSMapView(frame: CGRect.zero)
+        self.view = mapView
+
+        FirebaseService.shared.listRestaurants { (result, restaurants) in
+            switch result {
+            case .success:
+                if let restaurants = restaurants {
+                    var bounds = GMSCoordinateBounds()
+                    for restaurant in restaurants {
+
+                        let marker = GMSMarker()
+                        marker.position = CLLocationCoordinate2D(latitude: restaurant.latitude,
+                                                                 longitude: restaurant.longitude)
+                        marker.title = restaurant.name
+                        marker.snippet = restaurant.address
+                        marker.map = mapView
+                        bounds = bounds.includingCoordinate(marker.position)
+                    }
+
+                    let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
+                    mapView.animate(with: update)
+                }
+            case .error(let error):
+                Loader.shared.hideOverlayView()
+                print(error)
+            }
         }
     }
 

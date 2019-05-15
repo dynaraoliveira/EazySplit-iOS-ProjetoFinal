@@ -141,6 +141,49 @@ class FirebaseService {
         
     }
     
+    func listRestaurants(completion: @escaping((Result, [Restaurant]?) -> Void)) {
+        var restaurantList: [Restaurant] = []
+        
+        firestoreListener = firestore.collection(collectionRestaurants)
+            .order(by: "name", descending: false)
+            .addSnapshotListener(includeMetadataChanges: true){ (snapshot, error) in
+                if snapshot?.count == 0 {
+                    completion(.success, nil)
+                    return
+                }
+                
+                if let error = error {
+                    completion(.error(error), nil)
+                    return
+                }
+                
+                guard let snapshot = snapshot else { return }
+                
+                if snapshot.metadata.isFromCache || snapshot.documentChanges.count > 0 {
+                    restaurantList.removeAll()
+                    
+                    for document in snapshot.documents {
+                        let data = document.data()
+                        
+                        if let address = data["address"] as? String,
+                            let description = data["description"] as? String,
+                            let geolocation = data["geolocation"] as? GeoPoint,
+                            let name = data["name"] as? String,
+                            let rating = data["rating"] as? Int,
+                            let type = data["type"] as? String,
+                            let urlImage = data["url_image"] as? String
+                        {
+                            let restaurant = Restaurant(id: document.documentID, name: name, urlImage: urlImage, type: type, description: description, rating: rating, address: address, latitude: geolocation.latitude, longitude: geolocation.longitude)
+                            restaurantList.append(restaurant)
+                        }
+                    }
+                    
+                    completion(.success, restaurantList)
+                    return
+                }
+        }
+    }
+    
     private func savePhotoFireStorage(_ user: User, _ photoData: Data?, _ completion: @escaping(() -> Void)) {
         
         if let photoData = photoData {

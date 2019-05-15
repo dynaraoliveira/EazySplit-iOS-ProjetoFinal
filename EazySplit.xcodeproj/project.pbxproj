@@ -31,6 +31,9 @@
 /* Begin PBXFileReference section */
 		32F44C76815487553649CCEC /* Pods-EazySplit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.debug.xcconfig"; path = "Target Support Files/Pods-EazySplit/Pods-EazySplit.debug.xcconfig"; sourceTree = "<group>"; };
 		6091642A7524DF291746D055 /* Pods-EazySplit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.release.xcconfig"; path = "Target Support Files/Pods-EazySplit/Pods-EazySplit.release.xcconfig"; sourceTree = "<group>"; };
+		A504B1B2228529A200C2DB09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		A504B1B322852A1C00C2DB09 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
+		A504B1B422852A1C00C2DB09 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A55E5088227912E90099CB41 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A55E5091227A940D0099CB41 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A5A03B87226CF8DE00A0622C /* EazySplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EazySplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +311,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-PT",
 			);
 			mainGroup = A5A03B7E226CF8DE00A0622C;
 			productRefGroup = A5A03B88226CF8DE00A0622C /* Products */;
@@ -447,6 +451,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				A5A03B8F226CF8DE00A0622C /* Base */,
+				A504B1B2228529A200C2DB09 /* en */,
+				A504B1B322852A1C00C2DB09 /* pt-PT */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A5A03B94226CF8DF00A0622C /* Base */,
+				A504B1B422852A1C00C2DB09 /* pt-PT */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -466,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -527,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

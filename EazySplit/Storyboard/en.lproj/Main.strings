@@ -1,0 +1,99 @@
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "0kz-AQ-fvl"; */
+"0kz-AQ-fvl.placeholder" = "E-mail";
+
+/* Class = "UITextField"; placeholder = "CPF do titular"; ObjectID = "2Gg-rM-wTS"; */
+"2Gg-rM-wTS.placeholder" = "Document";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "7e8-6H-maH"; */
+"7e8-6H-maH.normalTitle" = "Register";
+
+/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "ALk-Pu-Fii"; */
+"ALk-Pu-Fii.title" = "Setting";
+
+/* Class = "UITextField"; placeholder = "Validade"; ObjectID = "BOo-qj-9Ip"; */
+"BOo-qj-9Ip.placeholder" = "Validate";
+
+/* Class = "UITextField"; placeholder = "Confirm password"; ObjectID = "ED0-NI-U5m"; */
+"ED0-NI-U5m.placeholder" = "Confirm password";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "FnO-3k-e1L"; */
+"FnO-3k-e1L.title" = "About";
+
+/* Class = "UITextField"; placeholder = "Birthday"; ObjectID = "G3N-Du-Jp4"; */
+"G3N-Du-Jp4.placeholder" = "Birthday";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "KKS-kM-1kb"; */
+"KKS-kM-1kb.placeholder" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Language"; ObjectID = "L67-Rv-zty"; */
+"L67-Rv-zty.normalTitle" = "Language";
+
+/* Class = "UITextField"; placeholder = "Senha"; ObjectID = "W5B-5a-70c"; */
+"W5B-5a-70c.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Nome do titular"; ObjectID = "a5n-85-T75"; */
+"a5n-85-T75.placeholder" = "Titular name";
+
+/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "aPe-T2-wqy"; */
+"aPe-T2-wqy.title" = "Setting";
+
+/* Class = "UITextField"; placeholder = "Número do cartão"; ObjectID = "aUg-96-TN4"; */
+"aUg-96-TN4.placeholder" = "Card number";
+
+/* Class = "UIButton"; normalTitle = "Salvar"; ObjectID = "auT-Vu-Z7B"; */
+"auT-Vu-Z7B.normalTitle" = "Save";
+
+/* Class = "UIViewController"; title = "Setting"; ObjectID = "axP-nI-Rdc"; */
+"axP-nI-Rdc.title" = "Setting";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "b0A-51-SjW"; */
+"b0A-51-SjW.placeholder" = "E-mail";
+
+/* Class = "UINavigationItem"; title = "Restaurants"; ObjectID = "bZK-LR-nJM"; */
+"bZK-LR-nJM.title" = "Restaurants";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "ekG-ZV-bnJ"; */
+"ekG-ZV-bnJ.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "inF-Gg-Ayq"; */
+"inF-Gg-Ayq.placeholder" = "Cellphone";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "khI-2n-LhK"; */
+"khI-2n-LhK.title" = "Map";
+
+/* Class = "UITabBarItem"; title = "Restaurants"; ObjectID = "ld7-Z5-tlf"; */
+"ld7-Z5-tlf.title" = "Restaurants";
+
+/* Class = "UILabel"; text = "Aplicativo para divisão de contas em bares e restaurantes, com ele, os usuários poderão convidar amigos, realizar o pedido e efetuar o pagamento da conta, de forma simples, rápida e justa."; ObjectID = "m9D-pL-vlr"; */
+"m9D-pL-vlr.text" = "Application to split accounts in bars and restaurants, with it, users can invite friends, place the order and make payment of the account, simply, quickly and fairly.";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "mOW-AL-PZL"; */
+"mOW-AL-PZL.normalTitle" = "Logout";
+
+/* Class = "UINavigationItem"; title = "Cards"; ObjectID = "nPz-nW-aAx"; */
+"nPz-nW-aAx.title" = "Cards";
+
+/* Class = "UIViewController"; title = "About"; ObjectID = "olC-Dq-ukJ"; */
+"olC-Dq-ukJ.title" = "About";
+
+/* Class = "UIViewController"; title = "Cards"; ObjectID = "qtA-qr-L10"; */
+"qtA-qr-L10.title" = "Cards";
+
+/* Class = "UITextField"; placeholder = "CVC"; ObjectID = "s5x-xy-DQt"; */
+"s5x-xy-DQt.placeholder" = "CVC";
+
+/* Class = "UIButton"; normalTitle = "Register other e-mail"; ObjectID = "tV3-m9-OMk"; */
+"tV3-m9-OMk.normalTitle" = "Register other e-mail";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "vQQ-69-265"; */
+"vQQ-69-265.placeholder" = "Password";
+
+/* Class = "UITabBarItem"; title = "Cards"; ObjectID = "vkC-eA-pDD"; */
+"vkC-eA-pDD.title" = "Cards";
+
+/* Class = "UILabel"; text = "Desenvolvido por:"; ObjectID = "x6o-ty-K8a"; */
+"x6o-ty-K8a.text" = "Developed by:";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "yFS-gO-D4X"; */
+"yFS-gO-D4X.title" = "About";
