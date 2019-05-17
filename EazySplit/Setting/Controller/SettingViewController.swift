@@ -11,15 +11,25 @@ import FirebaseAuth
 
 class SettingViewController: UIViewController {
 
-    @IBOutlet weak var language: UIButton!
+    
+    @IBOutlet weak var touchId: UISwitch!
     @IBOutlet weak var logout: UIButton!
+    
+    var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        touchId.isOn = userDefaults.bool(forKey: "touchid")
     }
     
-    @IBAction func clickLanguage(_ sender: Any) {
-    
+    @IBAction func changeSwitch(_ sender: Any) {
+        if !userDefaults.bool(forKey: "touchid") {
+            userDefaults.set(true, forKey: "touchid")
+        } else {
+            userDefaults.set(false, forKey: "touchid")
+        }
+
+        userDefaults.synchronize()
     }
     
     @IBAction func clickLogout(_ sender: Any) {

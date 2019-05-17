@@ -444,23 +444,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L67-Rv-zty">
-                                <rect key="frame" x="0.0" y="16" width="414" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXR-NK-KRE">
+                                <rect key="frame" x="0.0" y="24" width="414" height="71"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autenticação Biométrica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cT-f4-EQV">
+                                        <rect key="frame" x="36" y="22.5" width="230" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fn-tH-5xu">
+                                        <rect key="frame" x="310" y="20" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeSwitch:" destination="axP-nI-Rdc" eventType="valueChanged" id="8M6-L9-L0d"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="tiS-0L-d9f"/>
+                                    <constraint firstAttribute="height" constant="71" id="L2T-xS-CKT"/>
+                                    <constraint firstItem="2cT-f4-EQV" firstAttribute="leading" secondItem="TXR-NK-KRE" secondAttribute="leading" constant="36" id="UHI-W1-bGa"/>
+                                    <constraint firstItem="1Fn-tH-5xu" firstAttribute="centerY" secondItem="2cT-f4-EQV" secondAttribute="centerY" id="csU-o3-iH2"/>
+                                    <constraint firstItem="2cT-f4-EQV" firstAttribute="centerY" secondItem="TXR-NK-KRE" secondAttribute="centerY" id="gWo-Q6-95A"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Fn-tH-5xu" secondAttribute="trailing" constant="55" id="oPL-5a-WTN"/>
+                                    <constraint firstItem="1Fn-tH-5xu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2cT-f4-EQV" secondAttribute="trailing" constant="8" symbolic="YES" id="zDr-Fy-TDl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                <inset key="titleEdgeInsets" minX="64" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="32" minY="0.0" maxX="40" maxY="0.0"/>
-                                <state key="normal" title="Language" image="earth">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickLanguage:" destination="axP-nI-Rdc" eventType="touchUpInside" id="CLg-ve-HRk"/>
-                                </connections>
-                            </button>
+                            </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOW-AL-PZL">
-                                <rect key="frame" x="0.0" y="112" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="qd2-oz-P7F"/>
                                 </constraints>
@@ -477,16 +488,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="L67-Rv-zty" firstAttribute="leading" secondItem="LIm-bx-6DN" secondAttribute="leading" id="1Dl-HI-Mwe"/>
-                            <constraint firstItem="L67-Rv-zty" firstAttribute="trailing" secondItem="LIm-bx-6DN" secondAttribute="trailing" id="66X-xC-5hp"/>
+                            <constraint firstItem="TXR-NK-KRE" firstAttribute="leading" secondItem="LIm-bx-6DN" secondAttribute="leading" id="0Yj-Fj-deq"/>
+                            <constraint firstItem="mOW-AL-PZL" firstAttribute="top" secondItem="TXR-NK-KRE" secondAttribute="bottom" constant="20" id="64n-i1-9pT"/>
                             <constraint firstItem="mOW-AL-PZL" firstAttribute="leading" secondItem="LIm-bx-6DN" secondAttribute="leading" id="JQu-RE-2sh"/>
                             <constraint firstItem="mOW-AL-PZL" firstAttribute="leading" secondItem="LIm-bx-6DN" secondAttribute="leading" id="N6B-Tn-STi"/>
                             <constraint firstItem="mOW-AL-PZL" firstAttribute="trailing" secondItem="LIm-bx-6DN" secondAttribute="trailing" id="QXB-cM-YEG"/>
                             <constraint firstItem="mOW-AL-PZL" firstAttribute="trailing" secondItem="LIm-bx-6DN" secondAttribute="trailing" id="UGX-aZ-qqw"/>
-                            <constraint firstItem="L67-Rv-zty" firstAttribute="leading" secondItem="LIm-bx-6DN" secondAttribute="leading" id="gnX-nN-vDM"/>
-                            <constraint firstItem="mOW-AL-PZL" firstAttribute="top" secondItem="L67-Rv-zty" secondAttribute="bottom" constant="16" id="jAZ-Bc-YZg"/>
-                            <constraint firstItem="L67-Rv-zty" firstAttribute="trailing" secondItem="LIm-bx-6DN" secondAttribute="trailing" id="uyO-kk-U0y"/>
-                            <constraint firstItem="L67-Rv-zty" firstAttribute="top" secondItem="LIm-bx-6DN" secondAttribute="top" constant="16" id="xME-Ld-d7e"/>
+                            <constraint firstItem="TXR-NK-KRE" firstAttribute="top" secondItem="LIm-bx-6DN" secondAttribute="top" constant="24" id="lii-Un-DhP"/>
+                            <constraint firstItem="LIm-bx-6DN" firstAttribute="trailing" secondItem="TXR-NK-KRE" secondAttribute="trailing" id="zbI-94-2Ry"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LIm-bx-6DN"/>
                     </view>
@@ -494,8 +503,8 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="TP8-35-c4z"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="language" destination="L67-Rv-zty" id="ggk-wb-anC"/>
                         <outlet property="logout" destination="mOW-AL-PZL" id="YIt-gf-gvQ"/>
+                        <outlet property="touchId" destination="1Fn-tH-5xu" id="cUK-mF-cQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WN2-zD-uQK" userLabel="First Responder" sceneMemberID="firstResponder"/>

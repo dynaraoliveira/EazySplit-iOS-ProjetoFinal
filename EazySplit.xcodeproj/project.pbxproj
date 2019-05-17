@@ -10,6 +10,7 @@
 		066A8690B74486AD75EB135C /* Pods_EazySplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9155AAFA1653BF9DA0189CD /* Pods_EazySplit.framework */; };
 		A55E5089227912E90099CB41 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E5088227912E90099CB41 /* SettingViewController.swift */; };
 		A55E5092227A940D0099CB41 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E5091227A940D0099CB41 /* MapViewController.swift */; };
+		A588F10E228E6A0800330C12 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A588F10D228E6A0800330C12 /* Settings.bundle */; };
 		A5A03B8B226CF8DE00A0622C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A03B8A226CF8DE00A0622C /* AppDelegate.swift */; };
 		A5A03B8D226CF8DE00A0622C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A03B8C226CF8DE00A0622C /* LoginViewController.swift */; };
 		A5A03B90226CF8DE00A0622C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A03B8E226CF8DE00A0622C /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		6091642A7524DF291746D055 /* Pods-EazySplit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.release.xcconfig"; path = "Target Support Files/Pods-EazySplit/Pods-EazySplit.release.xcconfig"; sourceTree = "<group>"; };
 		A55E5088227912E90099CB41 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A55E5091227A940D0099CB41 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A588F10D228E6A0800330C12 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A5A03B87226CF8DE00A0622C /* EazySplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EazySplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A03B8A226CF8DE00A0622C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5A03B8C226CF8DE00A0622C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				A5A03B91226CF8DF00A0622C /* Assets.xcassets */,
 				A5A03BBC226EB70400A0622C /* GoogleService-Info.plist */,
 				A5A03B96226CF8DF00A0622C /* Info.plist */,
+				A588F10D228E6A0800330C12 /* Settings.bundle */,
 			);
 			path = EazySplit;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = A5A03B7E226CF8DE00A0622C;
@@ -325,6 +329,7 @@
 			files = (
 				A5A03B95226CF8DF00A0622C /* LaunchScreen.storyboard in Resources */,
 				A5A03BBD226EB70400A0622C /* GoogleService-Info.plist in Resources */,
+				A588F10E228E6A0800330C12 /* Settings.bundle in Resources */,
 				A5A03B92226CF8DF00A0622C /* Assets.xcassets in Resources */,
 				A5A03B90226CF8DE00A0622C /* Main.storyboard in Resources */,
 			);
