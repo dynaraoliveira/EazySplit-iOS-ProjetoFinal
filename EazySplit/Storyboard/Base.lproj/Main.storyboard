@@ -118,10 +118,24 @@
                     <view key="view" contentMode="scaleToFill" id="ODP-I1-xeA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Go-Q8-e33">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kly-jo-8pg" firstAttribute="bottom" secondItem="4Go-Q8-e33" secondAttribute="bottom" id="Bo9-1c-Djk"/>
+                            <constraint firstItem="4Go-Q8-e33" firstAttribute="top" secondItem="Kly-jo-8pg" secondAttribute="top" id="IKj-26-kB3"/>
+                            <constraint firstItem="Kly-jo-8pg" firstAttribute="trailing" secondItem="4Go-Q8-e33" secondAttribute="trailing" id="WkY-rj-era"/>
+                            <constraint firstItem="4Go-Q8-e33" firstAttribute="leading" secondItem="Kly-jo-8pg" secondAttribute="leading" id="aOb-8u-G9c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kly-jo-8pg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurants" id="bZK-LR-nJM"/>
+                    <connections>
+                        <outlet property="mapView" destination="4Go-Q8-e33" id="ebg-Cq-F4M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYZ-tH-ux4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1063,7 +1077,7 @@
         <image name="cartao" width="24" height="24"/>
         <image name="earth" width="24" height="24"/>
         <image name="icone" width="180" height="180"/>
-        <image name="information" width="24" height="24"/>
+        <image name="information" width="36" height="36"/>
         <image name="power" width="24" height="24"/>
         <image name="setting" width="32" height="32"/>
     </resources>

@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		066A8690B74486AD75EB135C /* Pods_EazySplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9155AAFA1653BF9DA0189CD /* Pods_EazySplit.framework */; };
+		7C8B71F32299FA7200137616 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8B71F22299FA7200137616 /* CoreLocation.framework */; };
 		A55E5089227912E90099CB41 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E5088227912E90099CB41 /* SettingViewController.swift */; };
 		A55E5092227A940D0099CB41 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E5091227A940D0099CB41 /* MapViewController.swift */; };
 		A588F10E228E6A0800330C12 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A588F10D228E6A0800330C12 /* Settings.bundle */; };
@@ -30,8 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19EA81BC7E32C0C6A786ECFE /* Pods-EazySplit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.release.xcconfig"; path = "Pods/Target Support Files/Pods-EazySplit/Pods-EazySplit.release.xcconfig"; sourceTree = "<group>"; };
 		32F44C76815487553649CCEC /* Pods-EazySplit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.debug.xcconfig"; path = "Target Support Files/Pods-EazySplit/Pods-EazySplit.debug.xcconfig"; sourceTree = "<group>"; };
 		6091642A7524DF291746D055 /* Pods-EazySplit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.release.xcconfig"; path = "Target Support Files/Pods-EazySplit/Pods-EazySplit.release.xcconfig"; sourceTree = "<group>"; };
+		7C8B71F22299FA7200137616 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E81124A5F58DF20919F72FB /* Pods-EazySplit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EazySplit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EazySplit/Pods-EazySplit.debug.xcconfig"; sourceTree = "<group>"; };
 		A55E5088227912E90099CB41 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A55E5091227A940D0099CB41 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A588F10D228E6A0800330C12 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8B71F32299FA7200137616 /* CoreLocation.framework in Frameworks */,
 				066A8690B74486AD75EB135C /* Pods_EazySplit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +259,8 @@
 			children = (
 				32F44C76815487553649CCEC /* Pods-EazySplit.debug.xcconfig */,
 				6091642A7524DF291746D055 /* Pods-EazySplit.release.xcconfig */,
+				8E81124A5F58DF20919F72FB /* Pods-EazySplit.debug.xcconfig */,
+				19EA81BC7E32C0C6A786ECFE /* Pods-EazySplit.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 		E5CB401C5F0B8156CA50774C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C8B71F22299FA7200137616 /* CoreLocation.framework */,
 				F9155AAFA1653BF9DA0189CD /* Pods_EazySplit.framework */,
 			);
 			name = Frameworks;
@@ -344,16 +352,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EazySplit/Pods-EazySplit-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-EazySplit/Pods-EazySplit-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-EazySplit/Pods-EazySplit-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,32 +369,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EazySplit/Pods-EazySplit-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/CPF-CNPJ-Validator/CPF_CNPJ_Validator.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-EazySplit/Pods-EazySplit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CPF_CNPJ_Validator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-EazySplit/Pods-EazySplit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,15 +385,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-EazySplit-checkManifestLockResult.txt",
 			);
@@ -518,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -574,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

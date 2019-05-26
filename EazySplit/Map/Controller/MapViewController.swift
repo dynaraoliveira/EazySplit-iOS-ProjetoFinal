@@ -1,4 +1,3 @@
-//
 //  MapViewController.swift
 //  EazySplit
 //
@@ -8,27 +7,40 @@
 
 import UIKit
 import GoogleMaps
+import MapKit
 
-class MapViewController: UIViewController {
 
+class MapViewController: UIViewController , CLLocationManagerDelegate {
+    
+   @IBOutlet weak var mapView: GMSMapView!
+   
     var restaurants: [Restaurant]?
+    var mylocation =  CLLocationManager()
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       mylocation.delegate = self
+       mylocation.desiredAccuracy = kCLLocationAccuracyBest
+       mylocation.requestWhenInUseAuthorization()
+
     }
     
     override func loadView() {
-
+        
         let mapView = GMSMapView(frame: CGRect.zero)
         self.view = mapView
-
+        
         FirebaseService.shared.listRestaurants { (result, restaurants) in
             switch result {
             case .success:
                 if let restaurants = restaurants {
+                    
                     var bounds = GMSCoordinateBounds()
                     for restaurant in restaurants {
-
+                 
+                        
                         let marker = GMSMarker()
                         marker.position = CLLocationCoordinate2D(latitude: restaurant.latitude,
                                                                  longitude: restaurant.longitude)
@@ -36,8 +48,12 @@ class MapViewController: UIViewController {
                         marker.snippet = restaurant.address
                         marker.map = mapView
                         bounds = bounds.includingCoordinate(marker.position)
+                        mapView.isMyLocationEnabled = true
+                      //  mapView.add(marke, level: .aboveRoads)
+                      
+                       
                     }
-
+                    
                     let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
                     mapView.animate(with: update)
                 }
@@ -47,5 +63,19 @@ class MapViewController: UIViewController {
             }
         }
     }
+    /*
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKPolyline {
+            var polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.blueColor()
+            polylineRenderer.lineWidth = 5
+            return polylineRenderer
+        }
+        
+        return nil
+    } */
+    
 
 }
+
+
