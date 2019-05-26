@@ -9,7 +9,6 @@ import UIKit
 import GoogleMaps
 import MapKit
 
-
 class MapViewController: UIViewController , CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: GMSMapView!
@@ -19,7 +18,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         
