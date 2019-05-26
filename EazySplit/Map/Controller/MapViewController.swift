@@ -12,19 +12,22 @@ import MapKit
 
 class MapViewController: UIViewController , CLLocationManagerDelegate {
     
-   @IBOutlet weak var mapView: GMSMapView!
-   
+    @IBOutlet weak var mapView: GMSMapView!
+    
     var restaurants: [Restaurant]?
-    var mylocation =  CLLocationManager()
- 
+    var locationManager =  CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       mylocation.delegate = self
-       mylocation.desiredAccuracy = kCLLocationAccuracyBest
-       mylocation.requestWhenInUseAuthorization()
-
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     override func loadView() {
@@ -36,24 +39,32 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
             switch result {
             case .success:
                 if let restaurants = restaurants {
-                    
                     var bounds = GMSCoordinateBounds()
-                    for restaurant in restaurants {
-                 
-                        
-                        let marker = GMSMarker()
-                        marker.position = CLLocationCoordinate2D(latitude: restaurant.latitude,
-                                                                 longitude: restaurant.longitude)
-                        marker.title = restaurant.name
-                        marker.snippet = restaurant.address
-                        marker.map = mapView
-                        bounds = bounds.includingCoordinate(marker.position)
-                        mapView.isMyLocationEnabled = true
-                      //  mapView.add(marke, level: .aboveRoads)
-                      
-                       
+                    let restaurant = restaurants[0]
+                    let marker = GMSMarker()
+                    
+                    marker.position = CLLocationCoordinate2D(latitude: restaurant.latitude,
+                                                             longitude: restaurant.longitude)
+                    marker.title = restaurant.name
+                    marker.snippet = restaurant.address
+                    marker.map = mapView
+                    
+                    bounds = bounds.includingCoordinate(marker.position)
+                    mapView.isMyLocationEnabled = true
+                    
+                    let path = GMSMutablePath()
+                    path.addLatitude(restaurant.latitude, longitude: restaurant.longitude)
+                    if let location: CLLocation = self.locationManager.location {
+                        let coordinate: CLLocationCoordinate2D = location.coordinate
+                        path.add(coordinate)
+                        bounds = bounds.includingCoordinate(coordinate)
                     }
                     
+                    let polyline = GMSPolyline(path: path)
+                    polyline.strokeWidth = 5.0
+                    polyline.geodesic = true
+                    polyline.map = mapView
+                
                     let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
                     mapView.animate(with: update)
                 }
@@ -63,19 +74,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
             }
         }
     }
-    /*
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if overlay is MKPolyline {
-            var polylineRenderer = MKPolylineRenderer(overlay: overlay)
-            polylineRenderer.strokeColor = UIColor.blueColor()
-            polylineRenderer.lineWidth = 5
-            return polylineRenderer
-        }
-        
-        return nil
-    } */
-    
-
 }
 
 
